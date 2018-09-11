@@ -2,15 +2,11 @@
 
 __author__ = 'fansly'
 
-from PIL import Image
-from PIL import PSDraw
+from PIL import Image, ImageDraw, ImageFont
 
-im = Image.open('Slycooper.png')
-w, h = im.size
-title =input("please input the number > :")
-class PIL.PSDraw.PSDraw(fp=None)
-    begin_document(id=None)
-    setfont("arial", 36)
-    text((w/2, h/2), title)
-    end_document()
-im.save('Slycopy.png', 'png')
+img = Image.open('Slycooper.png')
+draw = ImageDraw.Draw(img)
+textfont = ImageFont.truetype('Ubuntu-B.ttf', 128)
+w, h = img.size
+draw.text((w-256, 50), '99+', font=textfont, fill = 'red')
+img.save('Slycopy.png', 'png')
