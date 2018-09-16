@@ -2,13 +2,15 @@ __author__ = 'fansly'
 
 import random, string
 
-base = string.ascii_letters + string.digits
-def getRandom():
-    return " ".join(random.sample(base, 4))
-def concatenate(group):
-    return "-".join([getRandom() for i in range(group)])
-def generate(n):
-    return [concatenate(4) for i in range(n)]
+def get_code(num):
+    base = string.ascii_letters + string.digits
+    f = open('Code.txt', 'w')
+    for i in range(num):
+        code =  " "
+        for s in range(20):
+            code +=random.choice(base)
+        f.write(code+'\n')
+    f.close()
 
 if __name__ == '__main__':
-    print (generate(20))
+    get_code(200)
