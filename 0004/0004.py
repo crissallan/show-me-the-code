@@ -8,7 +8,7 @@ def get_word_frequencies(file_name):
 
     n = 0
     for line in txt:
-        print line
+        print(line)
         line = re.sub(r'[.?!,""/]', ' ', line)
         line = re.sub(r' - ', ' ', line)
         for word in line.split():
@@ -20,7 +20,7 @@ def get_word_frequencies(file_name):
             if n == 1:
                 word = m + word
                 n = 0
-            print word
+            print(word)
             dic.setdefault(word.lower(), 0)
             dic[word.lower()] += 1
 
